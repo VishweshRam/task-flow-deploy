@@ -24,6 +24,8 @@ interface Task {
   priority: 'low' | 'medium' | 'high';
   status: 'todo' | 'in-progress' | 'completed';
   dueDate?: string;
+  createdAt: string;
+  updatedAt: string;
 }
 
 interface MobileTaskDashboardProps {
@@ -39,7 +41,9 @@ const MobileTaskDashboard = ({ user, onLogout }: MobileTaskDashboardProps) => {
       description: 'Finish the quarterly project proposal for the new client',
       priority: 'high',
       status: 'in-progress',
-      dueDate: '2024-01-15'
+      dueDate: '2024-01-15',
+      createdAt: '2024-01-01T10:00:00Z',
+      updatedAt: '2024-01-05T14:30:00Z'
     },
     {
       id: '2',
@@ -47,7 +51,9 @@ const MobileTaskDashboard = ({ user, onLogout }: MobileTaskDashboardProps) => {
       description: 'Conduct monthly team performance reviews',
       priority: 'medium',
       status: 'todo',
-      dueDate: '2024-01-20'
+      dueDate: '2024-01-20',
+      createdAt: '2024-01-02T09:00:00Z',
+      updatedAt: '2024-01-02T09:00:00Z'
     },
     {
       id: '3',
@@ -55,26 +61,36 @@ const MobileTaskDashboard = ({ user, onLogout }: MobileTaskDashboardProps) => {
       description: 'Update project documentation with recent changes',
       priority: 'low',
       status: 'completed',
-      dueDate: '2024-01-10'
+      dueDate: '2024-01-10',
+      createdAt: '2024-01-03T11:00:00Z',
+      updatedAt: '2024-01-08T16:45:00Z'
     }
   ]);
 
   const [showTaskForm, setShowTaskForm] = useState(false);
   const [editingTask, setEditingTask] = useState<Task | null>(null);
 
-  const handleAddTask = (taskData: Omit<Task, 'id'>) => {
+  const handleAddTask = (taskData: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => {
+    const now = new Date().toISOString();
     const newTask: Task = {
       ...taskData,
-      id: Date.now().toString()
+      id: Date.now().toString(),
+      createdAt: now,
+      updatedAt: now
     };
     setTasks([...tasks, newTask]);
     setShowTaskForm(false);
   };
 
-  const handleEditTask = (taskData: Omit<Task, 'id'>) => {
+  const handleEditTask = (taskData: Omit<Task, 'id' | 'createdAt' | 'updatedAt'>) => {
     if (editingTask) {
       const updatedTasks = tasks.map(task =>
-        task.id === editingTask.id ? { ...taskData, id: editingTask.id } : task
+        task.id === editingTask.id ? { 
+          ...taskData, 
+          id: editingTask.id,
+          createdAt: editingTask.createdAt,
+          updatedAt: new Date().toISOString()
+        } : task
       );
       setTasks(updatedTasks);
       setEditingTask(null);
