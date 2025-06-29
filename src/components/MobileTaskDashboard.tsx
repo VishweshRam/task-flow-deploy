@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -85,6 +84,11 @@ const MobileTaskDashboard = ({ user, onLogout }: MobileTaskDashboardProps) => {
 
   const handleDeleteTask = (taskId: string) => {
     setTasks(tasks.filter(task => task.id !== taskId));
+  };
+
+  const handleCloseTaskForm = () => {
+    setShowTaskForm(false);
+    setEditingTask(null);
   };
 
   const getPriorityColor = (priority: string) => {
@@ -292,24 +296,13 @@ const MobileTaskDashboard = ({ user, onLogout }: MobileTaskDashboardProps) => {
         </SidebarInset>
       </div>
 
-      {/* Task Form Modal */}
-      {showTaskForm && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-lg p-6 w-full max-w-md max-h-[90vh] overflow-y-auto">
-            <h2 className="text-lg font-semibold mb-4">
-              {editingTask ? 'Edit Task' : 'Add New Task'}
-            </h2>
-            <TaskForm
-              initialData={editingTask || undefined}
-              onSubmit={editingTask ? handleEditTask : handleAddTask}
-              onCancel={() => {
-                setShowTaskForm(false);
-                setEditingTask(null);
-              }}
-            />
-          </div>
-        </div>
-      )}
+      {/* Task Form Modal - Fixed props to match TaskForm interface */}
+      <TaskForm
+        isOpen={showTaskForm}
+        onClose={handleCloseTaskForm}
+        onSubmit={editingTask ? handleEditTask : handleAddTask}
+        task={editingTask}
+      />
     </SidebarProvider>
   );
 };
