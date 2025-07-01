@@ -1,73 +1,50 @@
-# Welcome to my project
+# 🚀 My DevOps Project with Supabase
 
-## Project info
+Welcome to my personal DevOps project! This project is fully built and maintained by me, and it showcases a complete integration of Supabase with modern frontend tools and CI/CD practices.
 
-**URL**: https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82
+---
 
-## How can I edit this code?
+## 📌 Project Information
 
-There are several ways of editing your application.
+**Live URL:** [https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82](https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82)
 
-**Use Lovable**
+This is a full-stack application built using **React**, **Vite**, **TypeScript**, **shadcn/ui**, and **Tailwind CSS** — with **Supabase** powering authentication and backend services.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## ✍️ Author & Ownership
 
-**Use your preferred IDE**
+This entire project — from frontend development to backend integration and DevOps setup — has been written and configured by **me**.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## ⚙️ How to Run the Project Locally
 
-Follow these steps:
+To get started with this project on your local machine, follow the steps below.
 
-```sh
+### 🔧 Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/) (preferably using [nvm](https://github.com/nvm-sh/nvm))
+- npm (comes with Node.js)
+- Git
+
+### 🛠️ Setup Instructions
+
+```bash
 # Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+git clone <YOUR_GIT_REPOSITORY_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate into the project directory.
+cd <YOUR_PROJECT_DIRECTORY>
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install all required dependencies.
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Create a `.env` file and add your Supabase credentials.
+cp .env.example .env
+# Then edit .env with your Supabase URL and anon/public key.
+
+# Step 5: Start the development server.
 npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
