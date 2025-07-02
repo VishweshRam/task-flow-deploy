@@ -6,7 +6,7 @@ Welcome to my personal DevOps project! This project is fully built and maintaine
 
 ## 📌 Project Information
 
-**Live URL:** [https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82](https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82)
+**Live URL:** [https://lovable.dev/projects/b7fc1a03-8da8-4823-abe0-76508aacaf82](https://task-flow-deploy.lovable.app)
 
 This is a full-stack application built using **React**, **Vite**, **TypeScript**, **shadcn/ui**, and **Tailwind CSS** — with **Supabase** powering authentication and backend services.
 
